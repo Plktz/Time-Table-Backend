@@ -10,4 +10,4 @@ const subjectSchema = new Schema({
   tags: { type: SchemaTypes.Array },
 });
 const SubjectModel = connection.model("subjects", subjectSchema);
-module.exports = subjectSchema;
+module.exports = SubjectModel;

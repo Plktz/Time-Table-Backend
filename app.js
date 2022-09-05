@@ -6,7 +6,10 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors());
 
-app.use('/', require('./routes/user'));
+app.use('/user', require('./routes/user'));
+app.use('/class', require('./routes/class'));
+app.use('/teacher', require('./routes/teacher'));
+
 const server = app.listen(3000, (err) => {
     if(err){
         console.log('Server Crash', err);

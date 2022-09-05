@@ -3,17 +3,17 @@ module.exports = {
     add(userObject){
         return UserModel.create(userObject);
     },
-    read(userObject, response){
+    read(userObject, res){
         UserModel.findOne({'userid':userObject.userid, 'password':userObject.password}, (err,doc)=>{
             if(err){
-                response.json({message:'Error in DB '});
+                res.json({message:'Error in DB '});
                 console.log(err);
             }
             else if(doc && doc.userid){
-                response.json({result: true});
+                res.json({result: true});
             }
             else{
-                response.json({result: false});
+                res.json({result: false});
             }
         });
     },

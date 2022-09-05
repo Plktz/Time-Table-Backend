@@ -7,7 +7,8 @@ const roomSchema = new Schema({
     ref: "user",
   },
   name: { type: SchemaTypes.String, required: true },
+  capacity: { type: SchemaTypes.Number, required: true},
   tags: { type: SchemaTypes.Array },
 });
 const RoomModel = connection.model("rooms", roomSchema);
-module.exports = roomSchema;
+module.exports = RoomModel;

@@ -5,16 +5,16 @@ const Schema = connection.Schema;
 const classSchema = new Schema({
   userid: {
     type: SchemaTypes.ObjectId,
-    ref: "user",
+    ref: "user"
   },
   name: {
     type: SchemaTypes.String,
-    required: true,
+    required: true
   },
   capacity: {
-    type: SchemaTypes.int,
-    required: true,
+    type: SchemaTypes.Number,
+    required: true
   },
 });
 const ClassModel = connection.model("classes", classSchema);
-module.exports = classSchema;
+module.exports = ClassModel;
