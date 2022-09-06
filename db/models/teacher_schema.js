@@ -4,6 +4,7 @@ const Schema = connection.Schema;
 const teacherSchema = new Schema({
   userid: {
     type: SchemaTypes.ObjectId,
+    required: true,
     ref: "user",
   },
   name: { type: SchemaTypes.String, required: true },

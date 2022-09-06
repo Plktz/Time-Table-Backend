@@ -9,6 +9,9 @@ app.use(cors());
 app.use('/user', require('./routes/user'));
 app.use('/class', require('./routes/class'));
 app.use('/teacher', require('./routes/teacher'));
+app.use('/subject', require('./routes/subject'));
+app.use('/room', require('./routes/room'));
+app.use('/event', require('./routes/event'));
 
 const server = app.listen(3000, (err) => {
     if(err){

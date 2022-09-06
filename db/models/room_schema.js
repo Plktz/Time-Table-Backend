@@ -4,9 +4,10 @@ const Schema = connection.Schema;
 const roomSchema = new Schema({
   userid: {
     type: SchemaTypes.ObjectId,
+    required: true,
     ref: "user",
   },
-  name: { type: SchemaTypes.String, required: true },
+  name: { type: SchemaTypes.String, required: true, unique: true },
   capacity: { type: SchemaTypes.Number, required: true},
   tags: { type: SchemaTypes.Array },
 });

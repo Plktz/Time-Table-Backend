@@ -10,7 +10,7 @@ module.exports = {
     const userObject = request.body;
     const result = await userOperations.add(userObject);
     if (result && result.userid) {
-      -response.redirect("/login");
+      response.redirect("/login");
     } else {
       response.json({ message: "Record not Added..." });
     }

@@ -5,13 +5,15 @@ const Schema = connection.Schema;
 const classSchema = new Schema({
   userid: {
     type: SchemaTypes.ObjectId,
+    required: true,
     ref: "user"
   },
   name: {
     type: SchemaTypes.String,
-    required: true
+    required: true,
+    unique: true
   },
-  capacity: {
+  strength: {
     type: SchemaTypes.Number,
     required: true
   },
