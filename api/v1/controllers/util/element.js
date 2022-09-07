@@ -2,8 +2,7 @@ module.exports = (operations) => {
   return {
     async read(req, res) {
       const object = req.body;
-      console.log(object);
-      await operations.read(object, res);
+      const result = await operations.read(object, res);
     },
     async add(req, res) {
       const object = req.body;

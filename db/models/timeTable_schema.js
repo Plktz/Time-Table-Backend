@@ -11,5 +11,5 @@ const timeTableSchema = new Schema({
   breaks: [{types: SchemaTypes.Number}],
   events: [{type: SchemaTypes.ObjectId, ref: "events"}]
 });
-const TimeTableModel = connection.model("time table", timeTableSchema);
+const TimeTableModel = connection.model("timetable", timeTableSchema);
 module.exports = TimeTableModel;

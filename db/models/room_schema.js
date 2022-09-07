@@ -1,6 +1,9 @@
 const connection = require("../connection");
 const { SchemaTypes } = require("mongoose");
 const Schema = connection.Schema;
+const {ROOM} = require("../../utils/config/app-constants").SCHEMAS;
+
+
 const roomSchema = new Schema({
   userid: {
     type: SchemaTypes.ObjectId,
@@ -11,5 +14,5 @@ const roomSchema = new Schema({
   capacity: { type: SchemaTypes.Number, required: true},
   tags: { type: SchemaTypes.Array },
 });
-const RoomModel = connection.model("rooms", roomSchema);
+const RoomModel = connection.model(ROOM, roomSchema);
 module.exports = RoomModel;

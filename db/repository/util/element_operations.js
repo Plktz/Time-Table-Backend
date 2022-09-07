@@ -3,9 +3,9 @@ module.exports = (Model) => {
         add(object) {
           return Model.create(object);
         },
-        read(object, response) {
+        async read(object, response) {
           console.log(object);
-          Model.findOne({ userid: object.userid, name: object.name }, (err, doc) => {
+          const doc = await Model.findOne({ userid: object.userid, name: object.name }, (err, doc) => {
             if (err) {
               response.json({ message: "Error in DB " });
               console.log(err);
@@ -16,7 +16,8 @@ module.exports = (Model) => {
             } else {
               response.json({ message: "Invalid info" });
             }
-          });
+          }).exec();
+          return doc;
         },
         update(object) {
           return Model.findOneAndUpdate(

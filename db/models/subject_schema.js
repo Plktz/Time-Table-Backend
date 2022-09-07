@@ -1,5 +1,8 @@
 const connection = require("../connection");
 const { SchemaTypes } = require("mongoose");
+const {SUBJECT} = require("../../utils/config/app-constants").SCHEMAS;
+
+
 const Schema = connection.Schema;
 const subjectSchema = new Schema({
   userid: {
@@ -10,5 +13,5 @@ const subjectSchema = new Schema({
   name: { type: SchemaTypes.String, required: true ,    unique: true},
   tags: [ {type :SchemaTypes.String} ],
 });
-const SubjectModel = connection.model("subject", subjectSchema);
+const SubjectModel = connection.model(SUBJECT, subjectSchema);
 module.exports = SubjectModel;

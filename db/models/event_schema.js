@@ -1,6 +1,8 @@
 const connection = require("../connection");
 const { SchemaTypes } = require("mongoose");
 const Schema = connection.Schema;
+const {EVENT} = require("../../utils/config/app-constants").SCHEMAS;
+
 const eventSchema = new Schema({
   userid: {
     type: SchemaTypes.ObjectId,
@@ -26,7 +28,11 @@ const eventSchema = new Schema({
     type: SchemaTypes.ObjectId,
     required: true,
     ref: 'subject'
+  },
+  cycle: {
+    type: SchemaTypes.Number,
+    require: true
   }
 });
-const EventModel = connection.model("event", eventSchema);
+const EventModel = connection.model(EVENT, eventSchema);
 module.exports = EventModel;

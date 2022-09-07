@@ -1,4 +1,4 @@
-const userOperations = require("../db/repository/user_operations");
+const userOperations = require("../../../db/repository/user_operations");
 module.exports = {
   login(request, response) {
     const userObject = request.body;
