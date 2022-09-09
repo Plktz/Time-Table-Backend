@@ -7,6 +7,7 @@ module.exports = (Model) => {
     },
     async find(object) {
       const idKeys = [];
+      console.log(object);
       Object.keys(Model.schema.tree).forEach((key) => {
         if (Model.schema.path(key) instanceof mongoose.SchemaTypes.ObjectId) {
           idKeys.push(key);

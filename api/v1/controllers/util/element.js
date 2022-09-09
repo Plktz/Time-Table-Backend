@@ -4,6 +4,7 @@ module.exports = (operations) => {
   return {
     async find(req, res) {
       const object = req.body;
+      
       const result = await operations.find(object);
       console.log()
       if(result && result.userid)
@@ -15,7 +16,7 @@ module.exports = (operations) => {
     },
     async add(req, res) {
       const object = req.body;
-      console.log(req.body)
+      console.log(req.body);
       object.userid = mongoose.Types.ObjectId(object.userid);
       const result = await operations.add(object);
       if (result && result.userid) {
