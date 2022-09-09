@@ -2,6 +2,7 @@ module.exports = {
     ROUTES :{
         HOME:'/',
         USER:{
+            USER: '/user',
             LOGIN :'/login',
             REGISTER:'/register'
         },
@@ -9,37 +10,19 @@ module.exports = {
             ADD:'/add',
             DELETE:'/delete',
             UPDATE:'/update',
-            READ:'/read'
+            FIND:'/find',
         },
         CLASS:{
-            ADD:'/add',
-            DELETE:'/delete',
-            UPDATE:'/update',
-            READ:'/read'
+            CLASS: '/class'
         },
         SUBJECT:{
-            ADD:'/add',
-            DELETE:'/delete',
-            UPDATE:'/update',
-            READ:'/read'
+            SUBJECT: '/subject'
         },
         TEACHER:{
-            ADD:'/add',
-            DELETE:'/delete',
-            UPDATE:'/update',
-            READ:'/read'
+            TEACHER: '/teacher'
         },
         ROOM:{
-            ADD:'/add',
-            DELETE:'/delete',
-            UPDATE:'/update',
-            READ:'/read'
-        },
-        EVENT:{
-            ADD:'/add',
-            DELETE:'/delete',
-            UPDATE:'/update',
-            READ:'/read'
+            ROOM: '/room'
         }
     },
     STATUS_CODE:{

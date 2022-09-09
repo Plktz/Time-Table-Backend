@@ -1,11 +1,22 @@
+const { mongo, default: mongoose } = require("mongoose");
+
 module.exports = (operations) => {
   return {
-    async read(req, res) {
+    async find(req, res) {
       const object = req.body;
-      const result = await operations.read(object, res);
+      const result = await operations.find(object);
+      console.log()
+      if(result && result.userid)
+      {
+        res.json(result);
+      } else {
+        res.json({message: "Not found"});
+      }
     },
     async add(req, res) {
       const object = req.body;
+      console.log(req.body)
+      object.userid = mongoose.Types.ObjectId(object.userid);
       const result = await operations.add(object);
       if (result && result.userid) {
         res.json({ message: "Record Added" });

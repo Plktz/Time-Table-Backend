@@ -1,9 +1,10 @@
 const userOperations = require("../../../db/repository/user_operations");
 module.exports = {
-  login(request, response) {
+  async login(request, response) {
     const userObject = request.body;
-    const result = userOperations.read(userObject, response);
-    if (result) {
+    const result = await userOperations.read(userObject, response);
+    if (result && result.userid ) {
+      response.json(result);
     }
   },
   async register(request, response) {
