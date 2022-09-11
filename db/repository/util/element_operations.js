@@ -7,17 +7,15 @@ module.exports = (Model) => {
     },
     async find(object) {
       const idKeys = [];
-      console.log(object);
       Object.keys(Model.schema.tree).forEach((key) => {
         if (Model.schema.path(key) instanceof mongoose.SchemaTypes.ObjectId) {
           idKeys.push(key);
         }
       });
-      const doc = Model.findOne({
+      const doc = await Model.findOne({
         userid: mongoose.Types.ObjectId(object.userid),
         name: object.name,
-      }).populate(idKeys.join(" "));
-
+      }).populate(idKeys.join(" ")).exec();
       return doc;
     },
     update(object) {
