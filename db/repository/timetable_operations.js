@@ -109,6 +109,7 @@ module.exports = {
         }),
         rooms: rooms.map((room) => room.name),
         days: object.days,
+        periods: object.periods
       };
       return timeTable;
     } else {
