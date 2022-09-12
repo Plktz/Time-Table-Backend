@@ -4,6 +4,7 @@ const {CLASS} = require('./utils/config/app-constants').ROUTES.CLASS;
 const {TEACHER} = require('./utils/config/app-constants').ROUTES.TEACHER;
 const {SUBJECT} = require('./utils/config/app-constants').ROUTES.SUBJECT;
 const {ROOM} = require('./utils/config/app-constants').ROUTES.ROOM;
+const {TIMETABLE} = require('./utils/config/app-constants').ROUTES.TIMETABLE;
 const morgan = require('morgan');
 const logger= require('./utils/app-logger')(__filename);
 
@@ -20,13 +21,8 @@ app.use(CLASS, require('./api/v1/routes/class'));
 app.use(TEACHER, require('./api/v1/routes/teacher'));
 app.use(SUBJECT, require('./api/v1/routes/subject'));
 app.use(ROOM, require('./api/v1/routes/room'));
+app.use(TIMETABLE, require('./api/v1/routes/timetable'));
 
-const timetable_operations = require('./db/repository/timetable_operations');
-timetable_operations.create({
-    userid: "6314ba0dbb704d10072e1aa4",
-    periods: 7,
-    days: ["Monday", "Tuesday", "Wednesday"]
-});
 
 const server = app.listen(process.env.PORT, (err) => {
     if(err){

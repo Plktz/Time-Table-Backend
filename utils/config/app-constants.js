@@ -23,6 +23,10 @@ module.exports = {
         },
         ROOM:{
             ROOM: '/room'
+        },
+        TIMETABLE:{
+            TIMETABLE: '/timetable',
+            CREATE: '/create'
         }
     },
     STATUS_CODE:{
