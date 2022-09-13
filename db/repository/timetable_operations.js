@@ -77,7 +77,7 @@ module.exports = {
       .populate("class teacher")
       .exec();
     let rooms = await RoomModel.find({ userid: userid }).exec();
-    let periods = object.periods;
+    let periods = parseInt(object.periods);
     let days = object.days.length;
     subjects.forEach((subject) => {
       subject.rooms = [];

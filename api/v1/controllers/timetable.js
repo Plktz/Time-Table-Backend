@@ -11,7 +11,7 @@ module.exports = {
       periods: object.periods,
       days: object.days,
     });
-
+    console.log(result.grid);
     if (result) {
       res.json({ flag: true, result: result });
     } else {
@@ -19,3 +19,5 @@ module.exports = {
     }
   },
 };
+
+//grid[day][period][room]
