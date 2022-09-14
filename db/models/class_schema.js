@@ -14,7 +14,6 @@ const classSchema = new Schema({
   name: {
     type: SchemaTypes.String,
     required: true,
-    unique: true
   },
   strength: {
     type: SchemaTypes.Number,

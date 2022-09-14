@@ -3,9 +3,12 @@ const { default: mongoose } = require("mongoose");
 module.exports = (Model) => {
   return {
     add(object) {
+      object.name = object.name.toUpperCase();
       return Model.create(object);
     },
     async find(object) {
+      
+      object.name = object.name.toUpperCase();
       const idKeys = [];
       Object.keys(Model.schema.tree).forEach((key) => {
         if (Model.schema.path(key) instanceof mongoose.SchemaTypes.ObjectId) {
@@ -19,13 +22,15 @@ module.exports = (Model) => {
       return doc;
     },
     update(object) {
+      object.name = object.name.toUpperCase();
       return Model.findOneAndUpdate(
         { name: object.name, userid: object.userid },
         object,
         { new: true }
-      );
-    },
-    delete(object) {
+        );
+      },
+      delete(object) {
+      object.name = object.name.toUpperCase();
       return Model.findOneAndDelete({
         name: object.name,
         userid: object.userid,
