@@ -61,3 +61,7 @@
 2022-09-14T06:12:41.762Z [D:\Summer Training\TimeTable\time-table-backend\db\repository\timetable_operations.js] debug: timeTableCreate Called
 2022-09-14T06:16:53.585Z [D:\Summer Training\TimeTable\time-table-backend\db\repository\timetable_operations.js] debug: timeTableCreate Called
 2022-09-14T06:18:44.554Z [D:\Summer Training\TimeTable\time-table-backend\db\repository\timetable_operations.js] debug: timeTableCreate Called
+2022-09-14T07:31:44.020Z [D:\Summer Training\TimeTable\time-table-backend\api\v1\controllers\user.js] debug: userObject 
+2022-09-14T07:31:47.656Z [D:\Summer Training\TimeTable\time-table-backend\api\v1\controllers\user.js] debug: userObject 
+2022-09-14T07:31:51.163Z [D:\Summer Training\TimeTable\time-table-backend\db\repository\timetable_operations.js] debug: timeTableCreate Called
+2022-09-14T07:33:02.294Z [D:\Summer Training\TimeTable\time-table-backend\db\repository\timetable_operations.js] debug: timeTableCreate Called

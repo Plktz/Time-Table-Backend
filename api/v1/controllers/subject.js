@@ -6,7 +6,7 @@ const basic_controller = require("./util/element")(operations);
 const controller = basic_controller;
 
 controller.add = async (req, res) => {
-
+try{
     const object = req.body;
     const class_object = await class_operations.find({userid:object.userid, name: object.class});
     const teacher_object = await teacher_operations.find({userid:object.userid, name: object.teacher});
@@ -18,6 +18,8 @@ controller.add = async (req, res) => {
       res.json({ message: "Record Added" });
     } else {
       res.json({ message: "Record not Added..." });
+    }}catch{
+      res.json({message: "Invalid Information"})
     }
 }
 
